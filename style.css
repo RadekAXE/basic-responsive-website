@@ -1,0 +1,144 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Nav colors */
+  --nav-bc: hsl(359, 77%, 75%);
+  --nav-bc-items-hover: hsl(0, 0%, 100%);
+
+  /* Text colors */
+  --fc-primary: hsl(0, 0%, 100%);
+  --nav-fc-items-hover: hsl(0, 0%, 0%);
+
+  /* Typography */
+  --ff-primary: "Roboto", sans-serif;
+  --fs-nav: 1.25rem;
+  --fs-h1: clamp(2rem, 5vw + 1rem, 4rem);
+  --fs-caption: 1.25rem;
+}
+@media only screen and (min-width: 768px) {
+  :root {
+    --fs-caption: 1.8rem;
+  }
+}
+@media only screen and (max-width: 877px) {
+  :root {
+    --fs-nav: 1rem;
+  }
+}
+
+body {
+  padding: 1rem 2rem;
+  font-family: var(--ff-primary);
+}
+
+/* Grouping */
+nav,
+.hero-section-wrapper,
+.image-wrapper > img {
+  border-radius: 0.5rem;
+}
+
+nav,
+.hero-section-wrapper {
+  margin-bottom: 1rem;
+}
+
+/* Navigation */
+.burger-menu {
+  width: 30px;
+  height: 25px;
+  position: absolute;
+  right: 1rem;
+  display: none;
+}
+.burger-menu > img {
+  width: 100%;
+  height: 100%;
+}
+
+ul.navigation,
+a {
+  list-style-type: none;
+  text-decoration: none;
+  color: var(--fc-primary);
+  padding: 0.625rem;
+  border-radius: 0.5rem;
+}
+
+.navigation a:hover {
+  background-color: var(--nav-bc-items-hover);
+  color: var(--nav-fc-items-hover);
+  transition: all 0.5s;
+}
+
+nav {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--nav-bc);
+  font-size: var(--fs-nav);
+  padding: 2rem 0;
+  position: relative;
+  text-align: center;
+}
+
+.navigation {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* Hero section */
+.hero-section-wrapper {
+  background-image: url(./Media/hero-section.avif);
+  height: 70dvh;
+  min-width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.hero-text {
+  padding: 0 0 1rem 1rem;
+  color: var(--fc-primary);
+  font-size: var(--fs-caption);
+}
+
+.hero-text h1 {
+  font-size: var(--fs-h1);
+}
+
+/* Article section */
+
+.image-wrapper {
+  width: 100%;
+}
+
+.image-wrapper img {
+  width: 100%;
+}
+
+/* Media queries */
+@media only screen and (max-width: 768px) {
+  .burger-menu {
+    display: block;
+  }
+  .navigation {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .image-wrapper {
+    width: 50%;
+  }
+}
